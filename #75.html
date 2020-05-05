@@ -1,0 +1,52 @@
+<!--
+
+- Confeccionar una página que luego de 10 segundos redireccione a otro sitio empleando para ello la función setTimeout.
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+  <style>
+    #cronometro {
+      font-size:50px;
+      color:rgb(212, 6, 6);
+    }
+  </style>    
+</head>
+<body>
+<p>Esta pagina cambiara en 11 segundo</p>
+
+  <span id="cronometro">0</span>
+
+
+<script>
+  window.addEventListener('DOMContentLoaded', inicio, false);
+
+  var reloj;
+
+  function inicio() {
+    reloj=setInterval(procesar,1000);
+    document.getElementById('boton1').addEventListener('click',presionBoton,false);
+  }
+
+  function procesar()
+  {
+    reloj=setInterval(redireccionar,10000);
+    var nro=parseInt(document.getElementById('cronometro').innerHTML);
+    nro++;
+    document.getElementById('cronometro').innerHTML=nro;
+  }
+
+  function redireccionar()
+  {
+    window.location='http://www.google.com';
+  }
+
+</script>
+  
+</body>
+</html>
+
+
